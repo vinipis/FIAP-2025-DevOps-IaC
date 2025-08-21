@@ -12,11 +12,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "count_example" {
-  count         = 3
+  count         = 5
   ami           = "ami-0de716d6197524dd9"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "Instance ${count.index + 1}"
+    Name = "vini-instance-${count.index + 1}"
   }
 }
